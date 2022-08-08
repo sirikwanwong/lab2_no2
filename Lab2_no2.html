@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charet='utf-8'>
+</head>
+<body>
+    <fieldset>
+    <h2>แบบฟอร์มจองทัวร์</h2>
+    <fieldset>
+        <legend>ข้อมูลทั่วไป</legend>
+        ชื่อ-สกุล:<br>
+        <input
+            pattern="^[0-9]"
+            type="text"
+            name="name"
+            placeholder="กรอกชื่อ-สกุล"
+            required
+            title="Must be entered in characters only."
+        ><b>*</b>
+        <br>
+        Email :<br>
+        <input
+            type="email"
+            name="email"
+            required
+        ><b>*</b>
+        <br>
+        โทรศัพท์ :<br>
+        <input
+            pattern="/+66[0-9]{9}"
+            type="tel"
+            name="tel"
+            value="+66"
+            required
+            title="Fill in the email format only."
+        ><b>*</b>
+        <br>
+        ที่อยู่ :<br>
+        <input
+            type="text"
+            name="address"
+            style="width: 200px; height: 60px;"
+        >
+        <br>
+        รหัสไปรษณีย์ :
+        <input
+            pattern="[0-9]{5}"
+            type="text"
+            name="postcode"
+            style="width: 55px; height: 15px;"
+            title="Only 5 numbers must be entered."
+        >
+        <br>
+        รูปผู้จอง :
+        <input type="file" name="file" accept="image/*">
+        </fieldset>
+    <p></p>
+
+    <fieldset>
+        <legend>ข้อมูลเข้าสู่ระบบ</legend>
+        Username :<br>
+        <input
+            pattern="\w[8,]"
+            type="text"
+            name="username"
+            title="Username should only contain lowercase letters. e.g. john"
+        >
+        <br><i>ประกอบด้วยตัวเลข ตัวอักษร หรือ _ ตั้งแต่ 8 ตัวขึ้นไป</i>
+        <br><br>
+        Password :<br>
+        <input
+            pattern=".{8}"
+            type="text"
+            name="password"
+            title="Username should only contain lowercase letters. e.g. john"
+        >
+        <br><i>ประกอบด้วยอักขระอะไรก็ได้ 8 ตัวขึ้นไป</i>
+    </fieldset>
+    <p></p>
+
+    <fieldset>
+        <legend>ข้อมูลทัวร์ที่ต้องการ</legend>
+        แพคเก็จทัวร์ :
+        <select name="country">
+            <option value="">--select--</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Canada">Canada</option>
+            <option value="Denmark">Denmark</option>
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+        </select>
+        <br>
+        วันที่เดินทาง :
+        <input type="date" name="date"><br>
+        จำนวนผู้เดินทาง :
+        <input
+            min="1" max="10"
+            type="number"
+            name="traveler"
+            style="width: 40px; height: 15px;"
+            title="The number of tourists must be 1-10 people only."
+        >
+        <br>
+        เน้นการท่องเที่ยวแบบใด?<br>
+        <input 
+            type="checkbox" 
+            name="travel-type" 
+            value="shopping"
+        >ช็อปปิ้ง<br>
+        <input 
+            type="checkbox" 
+            name="travel-type"
+             value="naural"
+        >ธรรมชาติ<br>
+        <input 
+            type="checkbox" 
+            name="travel-type" 
+            value="sea"
+        >ทะเล<br>
+    </fieldset>
+    <p></p>
+    ยอมรับเงื่อนไขและข้อตกลง
+        <input type="radio" name="codition" value="agree" checked="checked">I agree
+        <input type="radio" name="codition" value="disagree">I disagree
+        <input type="submit" value="จอง"> 
+    </fieldset>
+</body>
+</html>
